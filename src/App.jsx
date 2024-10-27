@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import ToDoList from './components/ToDoList';
+import ToDoForm from './components/ToDoForm';
 
 
 const App = () => {
@@ -26,10 +27,9 @@ const App = () => {
   ]);
   const [newTask, setNewTask] = useState('');
 
-  const addTask = () => {
-    if (newTask.trim()) {
-      setTasks([...tasks, newTask.trim()]);
-      setNewTask(''); // Clear the input field
+  const addTask = (taskText) => {
+    if (taskText.trim()) {
+      setTasks([...tasks, taskText]);
     }
   };
 
@@ -44,18 +44,9 @@ const App = () => {
           {/**display tasks */}
           <ToDoList tasks={tasks}/>
 
-          {/**input for adding tasks */}
-          <TextInput
-            style={styles.input}
-            placeholder="Add new task"
-            value={newTask}
-            onChangeText={setNewTask}
-          />
+          {/**Pass addTask as a prop to ToDoForm */}
+          <ToDoForm addTask={addTask} />
 
-          {/**Button to add task */}
-          <Pressable>
-            <Button title="Add Task" onPress={addTask} />
-          </Pressable>
         </View>
       </SafeAreaView>
     </ScrollView>

@@ -1719,7 +1719,7 @@
   resolved "https://registry.npmjs.org/@react-native/eslint-plugin/-/eslint-plugin-0.75.4.tgz"
   integrity sha512-1kEZzC8UKi3baHnH7tBVCNpF4aoAmT7g7hEa5/rtZ+Z7vcpaxeY6wjNYt3j02Z9n310yX0NKDJox30CqvzEvsg==
 
-"@react-native/gradle-plugin@0.75.4":
+"@react-native/gradle-plugin@^0.75.4", "@react-native/gradle-plugin@0.75.4":
   version "0.75.4"
   resolved "https://registry.npmjs.org/@react-native/gradle-plugin/-/gradle-plugin-0.75.4.tgz"
   integrity sha512-kKTmw7cF7p1raT30DC0L6N+xiVXN7dlRy0J+hYPiCRRVHplwgvyS7pszjxfzwXmHFqOxwpxQVI3du8opsma1Mg==

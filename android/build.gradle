@@ -1,4 +1,4 @@
-buildscript {
+buildscript 
     ext {
         buildToolsVersion = "34.0.0"
         minSdkVersion = 23
@@ -10,11 +10,13 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-    }
+        maven { url "../node_modules/@react-native/gradle-plugin"     }
+
+
     dependencies {
-        classpath("com.android.tools.build:gradle")
-        classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("com.android.tools.build:gradle:8.0.2") // Ensure this matches your Gradle version
+        classpath("com.facebook.react:react-native-gradle-plugin:0.75.4") // Use 0.75.4 to match React Native version
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
 

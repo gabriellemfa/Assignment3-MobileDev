@@ -6,19 +6,33 @@ import {
     StyleSheet,
 } from 'react-native';
 
+// Destructuring addTask from the props
+function ToDoForm({ addTask }) {
 
+  // Manage local state for the task input
+  const [taskText, setTaskText] = useState('');
 
-const ToDoForm = () => {
+  // Define handleAddTask to call addTask prop
+  const handleAddTask = () => {
+    addTask(taskText); // Call the addTask function with taskText
+    setTaskText(''); // Clear the input field after adding the task
+  };
+
+  
   return (
     <View style={styles.form}>
       <TextInput
         style={styles.input}
         placeholder="Add a new task..."
+        onChangeText={(text) => setTaskText(text)} // Update local state on text input
+        value={taskText} // Set input value to local state
       />
-      <Button title="Add" />
+      
+      {/* Call handleAddTask on button press */}
+      <Button title="Add Task" onPress={handleAddTask} /> 
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   form: {
